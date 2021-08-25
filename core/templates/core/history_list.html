@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    {% if history_list %}
+        <table>
+        <tr>
+            <th>Date</th>
+            <th>Expression</th>
+            <th>Result</th>
+        </tr>
+            {% for history in history_list %}
+                <tr>
+                <td>{{ history.date }}</td>
+                <td>{{ history.input_expression }}</td>
+                <td>{{ history.output_result }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+    {% else %}
+        <h1>No history o far...</h1>
+    {% endif %}
+{% endblock content %}

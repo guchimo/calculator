@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <form action="{% url 'calculate_view' %}" method="post">
+    {% csrf_token %}
+        <label for="input_expression">Expression</label> <br>
+        <input type="text" id="input_expression" name="expression" value="{{ expression }}"> <br>
+        <label for="result">Result</label> <br>
+        <input id="result" name="final_result" value="{{ result }}">
+
+        <br>
+        <input type="submit" value="Calculate">
+    </form>
+{% endblock %}
